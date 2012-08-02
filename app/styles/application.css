@@ -1,0 +1,23 @@
+h1 {
+    text-align: center;
+}
+
+#header {
+    position: fixed;
+    width: 100px;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: #2C2C2C;
+}
+
+#section {
+    position: fixed;
+    width: 96%;
+    height: 100%;
+    left: 100px;
+    top: 0;
+    background: #EDEDED;
+}
+
+#footer {}

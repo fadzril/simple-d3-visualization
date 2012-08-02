@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Example brunch application</title>
+  <link rel="stylesheet" href="stylesheets/app.css">
+  <script src="javascripts/vendor.js"></script>
+  <script src="javascripts/app.js"></script>
+  <script>require('initialize');</script>
+</head>
+<body>
+
+  <header id="header">
+    <div id="navigation">
+      <nav class="navbar-fixed-left">
+        <div class="navbar-inner">
+          <ul class="nav">
+            <li class="active">
+              <a href="#">Home</a>
+            </li>
+            <li><a href="#">Stream</a></li>
+            <li><a href="#">Help</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section id="section">
+    <div id="dashboard">
+      <div class="container-fluid">
+        <div class="row-fluid">
+          <div id="main" class="span8">
+            <script type="text/x-handlebars">
+              {{ view App.Views.Home }}
+            </script>
+          </div>
+          <aside id="sidebar" class="span4">
+            <script type="text/x-handlebars">
+              {{ view App.Views.Stream }}
+            </script>
+            <hr class="soften">
+            <script type="text/x-handlebars">
+              {{ view App.Views.Referral }}
+            </script>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="footer"></footer>
+
+</body>
+</html>

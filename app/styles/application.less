@@ -1,0 +1,90 @@
+// application.less
+
+h1, h2, h3, h4, h5 {
+    text-align: left;
+}
+
+// Color Definitions
+@blue: #334a34;
+@black_dark: #2C2C2C;
+@grey_light: #EDEDED;
+@grey_dark: #DDDDDD;
+@grey_darker: #CDCDCD;
+
+#header {
+    position: fixed;
+    width: 100px;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: @black_dark;
+
+    .navbar-inner {
+        padding: 0;
+        li {
+            a {
+                padding: 40px 20px;
+                text-align: center;
+            }
+        }
+    }
+}
+
+#section {
+    position: fixed;
+    width: 96%;
+    height: 100%;
+    left: 100px;
+    top: 0;
+    background: @grey_light;
+
+    #dashboard {
+        margin: 10px;
+        border-radius: 5px;
+        position: relative;
+        display: inline-block;
+    }
+
+    #main {
+        position: absolute;
+        left: 10px;
+        height: 96%;
+        border-right: 1px solid @grey_dark;
+
+        path.link {
+            fill: none;
+            stroke: #ccc;
+            stroke-width: 1.5px;
+        }
+    }
+
+    #sidebar {
+        position: absolute;
+        right: 10px;
+        height: 96%;
+
+        .ember-view {
+            height: 50%;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+    }
+
+    .container-fluid {
+        padding: 20px;
+    }
+
+    .bordered {
+        border: 1px solid rgba(255, 255, 255, 1);
+    }
+
+    .shadowed {
+        box-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .soften {
+        border-top: 1px solid @grey_dark;
+    }
+}
+
+#footer {}
