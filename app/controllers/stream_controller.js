@@ -8,6 +8,7 @@ module.exports = App.Controllers.Stream = Em.ArrayController.create({
     },
 
     ready: function() {
+        var self = this;
         this.load();
         this.totalPath = 0;
     },
@@ -16,21 +17,23 @@ module.exports = App.Controllers.Stream = Em.ArrayController.create({
         var self = this;
         return $.getJSON('path.json', function(data) {
             self.set('content', data);
+            Handlebars.registerHelper('percentageCount', function(property, options) {
+                var item = Ember.getPath(this, property),
+                    total= self.total();
+                return parseInt(item/total * 100, 10) + '%';
+            });
         });
     },
 
     total: function() {
-        var self = this,
+        var self = this, totalPath = 0,
             totalCount = this.content.getEach('count').forEach(function(item) {
-                return self.totalPath = item + self.totalPath;
+                return totalPath = item + totalPath;
             });
-        return self.totalPath;
+        return totalPath;
     },
 
-    percentage: function() {
-        return (parseInt(this.get('count'), 10) / this.total() * 100).toFixed(0);
-        // return this.get('content').map(function(item, index) {
-        //     return {c: item.count};
-        //   });
-    }.property('content.@each', 'count').cacheable()
+    percentage: function(num) {
+        return num;
+    }.property().cacheable()
 })
