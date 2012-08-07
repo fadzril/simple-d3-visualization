@@ -18,20 +18,22 @@ module.exports = App.Views.Referral = Em.View.extend({
     },
 
     renderChart: function() {
-        var w = 60,
-            h = 60,
-            r = 25,
+        var w = 60, h = 60, r = 25,
+            collection, data,
+            index = Array.prototype.slice.call(arguments)[0],
             element = Em.$(this),
             color = d3.scale.category20c();
 
-        _data = App.Controllers.Referral.get('content').getEach('count');
+        collection = App.Controllers.Referral.get('content').getEach('count');
 
         data = [
-            {"label":"one", "value": (Math.random() * 20 | 60) }, 
-            {"label":"two", "value": (Math.random() * 50 | 70)}, 
-            {"label":"three", "value": (Math.random() * 30 | 30)}
+            {"label":"one", "value": collection[index]}, 
+            {"label":"two", "value": App.Controllers.Referral.get('total')}
         ];
-        if (Array.prototype.slice.call(arguments)[0] == 0) element.parents('li').addClass('no-border');
+
+        if ( index == 0) 
+            element.parents('li').addClass('no-border');
+
         var vis = d3.select(this)
             .append("svg:svg")
             .data([data])
