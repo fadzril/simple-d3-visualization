@@ -22,7 +22,6 @@ exports.config =
           'vendor/scripts/ember-latest.js',
           'vendor/scripts/ember-data-latest.js',
           'vendor/scripts/d3.js',
-          'vendor/scripts/d3.v2.js',
           'vendor/scripts/d3.layout.js',
           'vendor/scripts/pubsub.js',
           'vendor/scripts/bootstrap.js'
