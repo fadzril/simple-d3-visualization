@@ -126,6 +126,12 @@ body {
                         text-shadow: 0 1px #FFFFFF;
                         color: #9A9A9A;
                     }
+
+                    .url {
+                        font-size: 13px;
+                        line-height: 16px;
+                    }
+
                     .number {
                         font-weight: 600;
                         font-size: 22px;
@@ -140,15 +146,23 @@ body {
 
                     a { font-size: 13px; }
                 }
+
+                .ember-view {
+                    min-height: 30px;
+                    max-height: 50px;
+                    display: inline-block;
+                }
             }
 
             li.no-border, li.first{ border-top: none; }
 
             li.last { border-bottom: none; }
+
         }
 
         .ember-view {
             max-height: 48%;
+            min-height: 300px;
             overflow-y: auto;
             overflow-x: hidden;
             display: block;

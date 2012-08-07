@@ -1,0 +1,212 @@
+{
+    "nodes": [
+        {
+            "name": "Compare-Show", 
+            "group": 0
+        },
+        {
+            "name": "ViewStandardCatalog-ProductPaging ", 
+            "group": 1
+        },
+        {
+            "name": "ViewSuggestSearch-Suggest",
+            "group": 2
+        },
+        {
+            "name": "CorePageAdapter-GetBreadcrumb",
+            "group": 3
+        },
+        {
+            "name": "Meganav-Menu",
+            "group": 4
+        },
+        {
+            "name": "ViewProductAccessories-ProductAccessoriesProducts",
+            "group": 5
+        },
+        {
+            "name": "Default-Start",
+            "group": 6
+        },
+        {
+            "name": "ViewParametricSearch-SimpleOfferSearch",
+            "group": 7
+        },
+        {
+            "name": "ViewProduct-Start",
+            "group": 8
+        },
+        {
+            "name": "Default-Start",
+            "group": 6
+        },
+        {
+            "name": "Meganav-Menu",
+            "group": 4
+        },
+        {
+            "name": "ViewProductAccessories-ProductAccessoriesProducts",
+            "group": 5
+        },
+        {
+            "name": "ViewProduct-Start",
+            "group": 8
+        },
+        {
+            "name": "ViewSuggestSearch-Suggest",
+            "group": 2
+        },
+        {
+            "name": "ViewStandardCatalog-ProductPaging",
+            "group": 1
+        },
+        {
+            "name": "ViewParametricSearch-SimpleOfferSearch",
+            "group": 7
+        },
+        {
+            "name": "CorePageAdapter-GetBreadcrumb",
+            "group": 3
+        }
+    ],
+    "links": [
+        {
+            "source": 0,
+            "target": 1,
+            "value":1,
+            "isingle":"yes"
+        },
+        {
+            "source":0 ,
+            "target": 5,
+            "value":1,
+            "isingle":"yes"
+        },
+        {
+            "source":0 ,
+            "target": 2,
+            "value":3,
+            "isingle":"no"
+        },
+        {
+            "source":3 ,
+            "target":4 ,
+            "value":12,
+            "isingle":"no"
+        },
+        {
+            "source": 3,
+            "target": 5,
+            "value":10,
+            "isingle":"no"
+        },
+        {
+            "source": 4,
+            "target": 5,
+            "value":10,
+            "isingle":"no"
+        },
+        {
+            "source": 4,
+            "target": 2,
+            "value":2,
+            "isingle":"no"
+        },
+        {
+            "source": 4,
+            "target": 8,
+            "value":1,
+            "isingle":"yes"
+        },
+        {
+            "source": 7,
+            "target": 2,
+            "value":3,
+            "isingle":"no"
+        },
+        {
+            "source": 8,
+            "target": 5,
+            "value":1,
+            "isingle":"yes"
+        },
+        {
+            "source":5 ,
+            "target":1 ,
+            "value":2,
+            "isingle":"no"
+        },
+        {
+            "source": 5,
+            "target": 2,
+            "value":7,
+            "isingle":"yes"
+        },
+        {
+            "source":1 ,
+            "target":8 ,
+            "value":1,
+            "isingle":"yes"
+        },
+        {
+            "source":1 ,
+            "target": 2,
+            "value":1,
+            "isingle":"yes"
+        },
+        {
+            "source":2 ,
+            "target":5 ,
+            "value":8,
+            "isingle":"yes"
+        },
+        {
+            "source":1 ,
+            "target":14 ,
+            "value":9,
+            "isingle":"yes"
+        },
+        {
+            "source":6 ,
+            "target":9 ,
+            "value":1,
+            "isingle":"yes"
+        },
+        {
+            "source":4 ,
+            "target":10 ,
+            "value":9,
+            "isingle":"yes"
+        },
+        {
+            "source":5 ,
+            "target":11 ,
+            "value":16,
+            "isingle":"yes"
+        },
+        {
+            "source": 8,
+            "target": 12,
+            "value":2,
+            "isingle":"yes"
+        },
+        {
+            "source":2 ,
+            "target":13 ,
+            "value":221,
+            "isingle":"yes"
+        },
+        {
+            "source":3 ,
+            "target":16 ,
+            "value":2,
+            "isingle":"yes"
+        },
+        {
+            "source":7 ,
+            "target":15 ,
+            "value":1,
+            "isingle":"yes"
+        }
+    ]
+}

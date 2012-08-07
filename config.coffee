@@ -17,11 +17,14 @@ exports.config =
         before: [
           'vendor/scripts/console-helper.js',
           'vendor/scripts/jquery-1.7.2.js',
+          'vendor/scripts/underscore-min.js',
           'vendor/scripts/handlebars-1.0.0.beta.6.js',
           'vendor/scripts/ember-latest.js',
           'vendor/scripts/ember-data-latest.js',
           'vendor/scripts/d3.js',
+          'vendor/scripts/d3.v2.js',
           'vendor/scripts/d3.layout.js',
+          'vendor/scripts/pubsub.js',
           'vendor/scripts/bootstrap.js'
           ]
 

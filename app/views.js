@@ -3,3 +3,4 @@
 require('views/home_view');
 require('views/referral_view');
 require('views/stream_view');
+require('views/item_view');

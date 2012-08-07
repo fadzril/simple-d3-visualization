@@ -1,0 +1,32 @@
+body {
+    /*font: 10px sans-serif;*/
+}
+#easy-as-pie-chart {
+    background-color: #ffffff;
+    border: 1px solid gray;
+    font: 10px sans-serif;
+    height: 300px;
+    text-shadow: none;
+    width: 450px;
+}
+.total{
+    font-size: 18px;
+    font-weight: bold;
+}
+.units{
+    fill: gray;
+    font-size: 12px;
+}
+.label{
+    fill: #CCC;
+    font-size: 12px;
+    font-weight: bold;
+}
+.value{
+    font-size: 12px;
+    font-weight: bold;
+}
+#donut,#donut_info {margin:20px 0 0 0;}
+#donut_info hr{ margin:0;}
+#donut_info li { list-style: none;}
+#donut_info li h3{ display: inline-block;float: left;clear: both;margin-right: 26px;margin-left: 15px; width: 55px;}
