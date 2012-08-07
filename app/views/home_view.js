@@ -16,6 +16,10 @@ module.exports = App.Views.Home = Em.View.extend({
 
     init: function(){
         this._super();
+        var self = this;
+        setTimeout(function() {
+            self.build();
+        }, 1e3);
     },
 
     build: function() {

@@ -1,17 +1,16 @@
-<h3>Top Links</h3>
-<p><small>Top referral links</small></p>
-{{#each App.Controllers.Referral.content tagName="ul" id="referral" }}
+<h3>Top Referral Links</h3>
+<p>Top referral links</p>
+{{#each App.Controllers.Referral tagName="ul" id="referral" }}
     <li>
         <div class="row-fluid">
             <div class="chart span3">
-                {{App.Controllers.Referral.total}}
             </div>
             <div class="name span6">
                 <span class="title">{{name}}</span>
-                <span> {{url}} </span>
+                <span> <a {{bindAttr href="url"}}>{{url}}</a> </span>
             </div>
             <div class="count span3 centered">
-                <span>{{count}}</span>
+                <span class="number">{{count}}</span>
                 <span>visitors</span>
             </div>
         </div>

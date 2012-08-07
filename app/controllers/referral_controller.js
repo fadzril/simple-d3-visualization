@@ -11,7 +11,6 @@ module.exports = App.Controllers.Referral = Em.ArrayController.create({
     load: function() {
         var self = this;
         return $.getJSON('referral.json', function(item) {
-            // self.pushObject( App.Models.Referral.create(item.children) );
             self.set('content', item.children);
         });
     },
