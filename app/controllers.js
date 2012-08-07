@@ -3,3 +3,4 @@
 require('controllers/my_controller');
 require('controllers/home_controller');
 require('controllers/referral_controller');
+require('controllers/stream_controller');

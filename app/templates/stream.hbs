@@ -1,2 +1,16 @@
 <h3>Node Information</h3>
 <p>Navigation based on click path views</p>
+<div id="node-chart"></div>
+{{#each App.Controllers.Stream tagName="ul" id="stream"}}
+    <li>
+        <div class="row-fluid">
+            <div class="count span4 centered">
+                <span class="number">{{App.Controllers.Stream.percentage}}</span>
+            </div>
+            <div class="name span6">
+                <span class="title">{{name}}</span>
+                <span> <a {{bindAttr href="name"}}>{{name}}</a> </span>
+            </div>
+        </div>
+    </li>
+{{/each}}

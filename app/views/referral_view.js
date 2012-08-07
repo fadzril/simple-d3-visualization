@@ -10,11 +10,21 @@ module.exports = App.Views.Referral = Em.View.extend({
         this.load();
         setTimeout(function() {
             Em.$('.chart').each(self.renderChart);
-        }, 1e3);
+            self.setProperties();
+        }, 1e2);
     },
 
     load: function() {
         return App.Controllers.Referral.ready();
+    },
+
+    setProperties: function() {
+        var list    = Ember.$('#sidebar ul')[1],
+            child   = $(list).children('li')
+            len     = child.length;
+
+        $(child).eq(0).addClass('first');
+        $(child).eq(len - 1).addClass('last');
     },
 
     renderChart: function() {
@@ -22,9 +32,16 @@ module.exports = App.Views.Referral = Em.View.extend({
             collection, data,
             index = Array.prototype.slice.call(arguments)[0],
             element = Em.$(this),
-            color = d3.scale.category20c();
+            color = d3.scale.ordinal().range(["#08C", "#CECECE"]);
 
-        collection = App.Controllers.Referral.get('content').getEach('count');
+        function angle(d) {
+            var a = (d.startAngle + d.endAngle) * 90 / Math.PI - 90;
+            return a > 90 ? a - 180 : a;
+        }
+
+        collection = App.Controllers.Referral
+            .get('content')
+            .getEach('count');
 
         data = [
             {"label":"one", "value": collection[index]}, 
@@ -59,14 +76,12 @@ module.exports = App.Views.Referral = Em.View.extend({
                 .attr("d", arc);
 
             arcs.append("svg:text")
-                .attr("transform", function(d) {
-                    //we have to make sure to set these before calling arc.centroid
-                    d.innerRadius = 0;
-                    d.outerRadius = r;
-                    return "translate(" + arc.centroid(d) + ")";
-                })
                 .attr("text-anchor", "middle")
                 .attr("font-size", 10)
-                .text(function(d, i) { return data[i].label; });
+                .text(function(d, i) {
+                    if (i !== 0)
+                        return parseInt((data[0].value / data[1].value * 100), 10) + '%'; 
+                    else return '';
+                });
     }
 });

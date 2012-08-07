@@ -1,5 +1,6 @@
 h1, h2, h3, h4, h5 {
     text-align: left;
+    text-shadow: 0 1px #FFF;
 }
 
 // Color Definitions
@@ -8,6 +9,11 @@ h1, h2, h3, h4, h5 {
 @grey_light : #EDEDED;
 @grey_dark  : #DDDDDD;
 @grey_darker: #CDCDCD;
+@grey_darkest: #8A8A8A;
+
+body {
+    color: #7A7A7A;
+}
 
 #header {
     position: fixed;
@@ -19,10 +25,42 @@ h1, h2, h3, h4, h5 {
 
     .navbar-inner {
         padding: 0;
+        border-radius: 0;
+        border: none;
+        box-shadow: none;
+        background: @black_dark;
+
         li {
+            &.active {
+                a {
+                    background-color: #1A1A1A !important;
+                    border-bottom: 1px solid #444;
+                    border-top: 1px solid #111;
+                }
+            }
             a {
-                padding: 40px 20px;
                 text-align: center;
+                color: #777;
+                padding: 40px 20px 20px;
+                line-height: 45px;
+                text-transform: uppercase;
+                font-size: 10px;
+                text-shadow: 0 1px #000;
+
+                &:hover {
+                    background-color: #1A1A1A;
+                    opacity: 0.8
+                }
+            }
+
+            &.home a {
+                background: transparent url(/img/icon_home.png) center 20px no-repeat;
+            }
+            &.stream a {
+                background: transparent url(/img/icon_stream.png) center 20px no-repeat;
+            }
+            &.help a {
+                background: transparent url(/img/icon_help.png) center 20px no-repeat;
             }
         }
     }
@@ -63,6 +101,7 @@ h1, h2, h3, h4, h5 {
 
         ul {
             list-style: none;
+            margin: 0 0 10px 10px;
 
             li {
                 margin: 0;
@@ -81,26 +120,35 @@ h1, h2, h3, h4, h5 {
 
                 .name, .count {
                     .title, .number {
-                        font-size: 22px;
-                        font-weight: bold;
+                        font-size: 20px;
+                        font-weight: 500;
                         line-height: 30px;
                         text-shadow: 0 1px #FFFFFF;
-                        color: #3A3A3A;
+                        color: #9A9A9A;
+                    }
+                    .number {
+                        font-weight: 600;
+                        font-size: 22px;
+                        color: #08C;
                     }
                     span {
                         clear: both;
                         display: block;
+                        color: @grey_darkest;
+                        font-size: 11px;
                     }
+
+                    a { font-size: 13px; }
                 }
             }
 
-            li.no-border, li:first-child {
-                border-top: none;
-            }
+            li.no-border, li.first{ border-top: none; }
+
+            li.last { border-bottom: none; }
         }
 
         .ember-view {
-            min-height: 48%;
+            max-height: 48%;
             overflow-y: auto;
             overflow-x: hidden;
             display: block;
