@@ -1,7 +1,19 @@
 <h3>Top Links</h3>
-<p>Top referral links</p>
-<ul>
-    {{#each content context="this"}}
-        {{#view }}
-    {{/each}}
-</ul>
+<p><small>Top referral links</small></p>
+{{#each App.Controllers.Referral.content tagName="ul" id="referral" }}
+    <li>
+        <div class="row-fluid">
+            <div class="chart span3">
+                {{App.Controllers.Referral.total}}
+            </div>
+            <div class="name span6">
+                <span class="title">{{name}}</span>
+                <span> {{url}} </span>
+            </div>
+            <div class="count span3 centered">
+                <span>{{count}}</span>
+                <span>visitors</span>
+            </div>
+        </div>
+    </li>
+{{/each}}

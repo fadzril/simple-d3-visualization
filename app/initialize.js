@@ -16,7 +16,6 @@ App.reopen({
         });
 
         App.controllers.home.set('theMan', dude);
-        App.controllers.referral.ready();
         App.resize();
         App.events();
 
@@ -44,4 +43,8 @@ App.reopen({
     events: function() {
         $(window).resize(App.resize);
     }
+});
+
+App.store = DS.Store.create({
+  revision: 4
 });
