@@ -171,6 +171,36 @@ body {
             overflow-y: hidden;
             width: 100%;
         }
+
+        // Graph
+        path.link {
+            fill: none;
+            stroke: #666;
+            stroke-width: 1.5px;
+        }
+
+        marker#licensing {
+            fill: green;
+        }
+
+        path.link.licensing {
+            stroke: green;
+        }
+
+        path.link.resolved {
+            stroke-dasharray: 0,2 1;
+        }
+
+        text {
+            pointer-events: none;
+            fill: #999;
+        }
+
+        text.shadow {
+            stroke: #fff;
+            stroke-width: 3px;
+            stroke-opacity: .8;
+        }
     }
 
     .container-fluid {
