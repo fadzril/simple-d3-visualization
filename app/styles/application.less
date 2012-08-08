@@ -79,6 +79,7 @@ body {
         border-radius: 5px;
         position: relative;
         display: inline-block;
+        overflow: hidden
     }
 
     #main {
@@ -102,6 +103,9 @@ body {
         ul {
             list-style: none;
             margin: 0 0 10px 10px;
+            height: 400px;
+            overflow-y: auto;
+            overflow-x: hidden;
 
             li {
                 margin: 0;
@@ -161,11 +165,10 @@ body {
         }
 
         .ember-view {
-            max-height: 48%;
+            max-height: 49%;
             min-height: 300px;
-            overflow-y: auto;
             overflow-x: hidden;
-            display: block;
+            overflow-y: hidden;
             width: 100%;
         }
     }

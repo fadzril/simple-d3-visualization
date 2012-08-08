@@ -18,10 +18,10 @@ module.exports = App.Views.Stream = Em.View.extend({
 
     load: function() {
         var self = this;
-        this.info = Ember.A();
+        this.info = new Ember.A();
         PubSub.subscribe("dataAdj",function(topic,data){
             Em.$('#node-chart').empty();
-            Em.$('#info li').remove();
+            Em.$('#info li').empty();
             App.Views.PathItem.create();
             self.renderChart(data);
             self.renderDetails(data);
@@ -31,7 +31,7 @@ module.exports = App.Views.Stream = Em.View.extend({
 
     renderChart: function(dataAdj) {
         var n = Math.ceil(Math.random()*10),
-            q = 0,        
+            q = 0,
             width = 150,
             height = 150,
             arrayRange = 10000,
@@ -121,9 +121,10 @@ module.exports = App.Views.Stream = Em.View.extend({
             total  = _.reduce(clicks, function(memo, num) {
                 return memo + num;
             }, 0);
+        self.set('info', []);
         data.forEach(function(k, v) {
             var node = {
-                percentage: (k['octetTotalCount']/total * 100).toFixed(0),
+                percentage: (k['octetTotalCount']/total * 100).toFixed(1),
                 pathView: k['octetTotalCount'],
                 url: k.name,
                 color: k.color

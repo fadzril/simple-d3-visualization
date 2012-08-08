@@ -11,7 +11,7 @@ module.exports = App.Views.Referral = Em.View.extend({
         setTimeout(function() {
             Em.$('.chart').each(self.renderChart);
             self.setProperties();
-        }, 1e2);
+        }, 1e3);
     },
 
     load: function() {
